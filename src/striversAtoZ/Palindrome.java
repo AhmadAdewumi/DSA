@@ -12,7 +12,7 @@ public class Palindrome {
             n = n / 10; //-- strip the last digit
         }
 
-        return n == revertedNumber || n == revertedNumber / 10;
+        return n == revertedNumber || n == revertedNumber / 10; //-- second check is for odd no.s case
     }
 
     public static void main(String[] args) {
