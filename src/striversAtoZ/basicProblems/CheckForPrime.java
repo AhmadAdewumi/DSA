@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 public class CheckForPrime {
     static boolean isPrime(int n) {

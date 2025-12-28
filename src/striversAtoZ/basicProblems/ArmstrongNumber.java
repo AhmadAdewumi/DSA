@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 public class ArmstrongNumber {
     public static boolean isArmstrong(int num) {

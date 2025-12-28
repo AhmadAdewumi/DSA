@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 public class ReverseDigits {
     static int reverseDigits(int n) {

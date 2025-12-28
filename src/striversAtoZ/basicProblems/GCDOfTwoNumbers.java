@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 public class GCDOfTwoNumbers {
     public static int findGCD(int n1, int n2) {

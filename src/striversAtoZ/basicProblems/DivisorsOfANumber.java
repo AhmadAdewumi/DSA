@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,3 +1,5 @@
+package striversAtoZ;
+
 public class ResizeArray {
     /***
      * create a method that returns an array and takes an array and the new capacity you want as a parameter

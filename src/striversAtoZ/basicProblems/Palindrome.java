@@ -1,4 +1,4 @@
-package striversAtoZ;
+package striversAtoZ.basicProblems;
 
 public class Palindrome {
     static boolean isPalindrome(int n) {
