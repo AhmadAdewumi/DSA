@@ -1,4 +1,4 @@
-package striversAtoZ.recursion;
+package leetcode;
 
 public class PalindromicString {
     static boolean palindromicCheck(String s) {
