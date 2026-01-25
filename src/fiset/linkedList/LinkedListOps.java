@@ -108,6 +108,23 @@ public class LinkedListOps {
         return head;
     }
 
+    static Node deleteHead(Node head){
+        //-- check if list is empty
+        if (head == null) {
+            return null;
+        }
+
+        //-- store current head in a temp var
+        Node temp = head;
+
+        //-- move the head pointer to the next node
+        head = head.next;
+
+        //-- free memory of the temp
+        temp = null;
+        return head;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(20);
         head.next = new Node(30);
@@ -118,9 +135,12 @@ public class LinkedListOps {
         head = insertAtFront(head, x);
         head = insertAtEnd(head, y);
 
+        head = deleteHead(head); //-- works
+
         head = insertNodeAtPos(head, 3, 67);
 //        traverseLinkedList(head);
         traverseListRecursively(head);
+
 
         Node middleNode = findMiddleNodeInOnePass(head);
         System.out.println("The middle node is: " + middleNode.data);
