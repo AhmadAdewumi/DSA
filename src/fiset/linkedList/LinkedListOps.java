@@ -96,19 +96,19 @@ public class LinkedListOps {
         }
 
         //-- to guard against pos that doesn't exist in the list
-        if(current == null)
+        if (current == null)
             return head; //-- Invalid position, nothing is done , keep the list exactly as it was
 
         //-- take care of creating the new node and updating the next pointers
         Node newNode = new Node(val);
-        newNode.next =  current.next;
+        newNode.next = current.next;
         current.next = newNode;
 
 
         return head;
     }
 
-    static Node deleteHead(Node head){
+    static Node deleteHead(Node head) {
         //-- check if list is empty
         if (head == null) {
             return null;
@@ -122,27 +122,47 @@ public class LinkedListOps {
 
         //-- free memory of the temp
         temp = null;
+
+        return head;
+    }
+
+    static Node deleteTail(Node head) {
+        if (head == null)
+            return null;
+
+        //-- if the list has only a node, remove it , i.e set to null
+        if (head.next == null)
+            return null;
+
+        Node secondLast = head;
+        while (secondLast.next.next != null) {
+            secondLast = secondLast.next;
+        }
+
+        secondLast.next = null;
+
         return head;
     }
 
     public static void main(String[] args) {
-        Node head = new Node(20);
-        head.next = new Node(30);
-        head.next.next = new Node(40);
-        head.next.next.next = new Node(50);
+        Node node = new Node(20);
+        node.next = new Node(30);
+        node.next.next = new Node(40);
+        node.next.next.next = new Node(50);
 
         int x = 18, y = 17;
-        head = insertAtFront(head, x);
-        head = insertAtEnd(head, y);
+        node = insertAtFront(node, x);
+        node = insertAtEnd(node, y);
 
-        head = deleteHead(head); //-- works
+        node = deleteHead(node); //-- works
+        node = deleteTail(node); //-- works
 
-        head = insertNodeAtPos(head, 3, 67);
-//        traverseLinkedList(head);
-        traverseListRecursively(head);
+        node = insertNodeAtPos(node, 3, 67);
+//        traverseLinkedList(node);
+        traverseListRecursively(node);
 
 
-        Node middleNode = findMiddleNodeInOnePass(head);
+        Node middleNode = findMiddleNodeInOnePass(node);
         System.out.println("The middle node is: " + middleNode.data);
 
     }
