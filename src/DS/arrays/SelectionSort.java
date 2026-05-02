@@ -1,6 +1,4 @@
-package arrays;
-
-import java.util.Arrays;
+package DS.arrays;
 
 public class SelectionSort {
 

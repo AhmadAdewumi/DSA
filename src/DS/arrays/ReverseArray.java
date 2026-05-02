@@ -1,4 +1,4 @@
-package arrays;
+package DS.arrays;
 
 public class ReverseArray {
     public static void revArray(int[] numbers, int start, int end) {

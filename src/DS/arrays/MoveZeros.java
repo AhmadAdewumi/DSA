@@ -1,4 +1,4 @@
-package arrays;
+package DS.arrays;
 
 /***
  * declare a method that takes an array as a parameter and also returns an array

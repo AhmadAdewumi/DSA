@@ -1,4 +1,4 @@
-package arrays;
+package DS.arrays;
 
 public class FindMin {
     public static int findMin(int[] arr) {

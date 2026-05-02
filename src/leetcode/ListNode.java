@@ -164,7 +164,7 @@ public class ListNode {
         //-- find middle
         //-- reverse half
         //-- compare both halves
-        if (head == null || head.next == null){
+        if (head == null || head.next == null) {
             return true;
         }
 
@@ -174,13 +174,13 @@ public class ListNode {
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
         //-- for odd SLL like 1 -> 2 -> 3 -> 2 -> 1,  we don't need to compare the node at the middle, so we move the slow pointer forward
-        if (fast != null){
+        if (fast != null) {
             slow = slow.next;
         }
 
@@ -190,8 +190,8 @@ public class ListNode {
         ListNode firstHalf = head;
 
         //-- we do our comparison by using the second half, since it can be exhausted, and then compare it with the second half
-        while(secondHalf != null){
-            if (firstHalf.value != secondHalf.value){
+        while (secondHalf != null) {
+            if (firstHalf.value != secondHalf.value) {
                 return false;
             }
 
@@ -220,6 +220,31 @@ public class ListNode {
     }
 
 
+    public static ListNode addListNodeUsingDummyNode(ListNode l1, ListNode l2) {
+        ListNode dummyNode = new ListNode(0);
+        ListNode tail = dummyNode;
+
+        int carry = 0;
+
+        while (l1 != null || l2 != null || carry != 0) {
+            int a = (l1 != null) ? l1.value : 0;
+            int b = (l2 != null) ? l2.value : 0;
+
+            int total = a + b + carry;
+
+            int digit = total % 10;
+            carry = total / 10;
+
+            tail.next = new ListNode(digit);
+            tail = tail.next;
+
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+
+        return dummyNode.next;
+    }
+
     public static void main(String[] args) {
         ListNode list1 = new ListNode(1);
         list1.next = new ListNode(2);
@@ -241,9 +266,13 @@ public class ListNode {
 //        System.out.println("After Reversal");
 //        printList(list1);
 
-        System.out.println("Print out merged Linked List");
-        ListNode mergeResult = mergeSortedListsUsingDummyNode(list1, list2);
-        printList(mergeResult);
+//        System.out.println("Print out merged Linked List");
+//        ListNode mergeResult = mergeSortedListsUsingDummyNode(list1, list2);
+//        System.out.println("Gonna print addition result now");
+//        printList(mergeResult);
+
+        ListNode addResultRec = addListNodeUsingDummyNode(list1, list2);
+        printList(addResultRec);
     }
 
 }

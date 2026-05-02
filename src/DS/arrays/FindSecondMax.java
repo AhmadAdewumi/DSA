@@ -1,4 +1,4 @@
-package arrays;
+package DS.arrays;
 
 public class FindSecondMax {
 
