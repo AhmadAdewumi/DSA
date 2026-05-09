@@ -56,7 +56,7 @@ public class SimpleHashMap {
         int index = getBucketIndex(key);
 
         for (Node current = buckets[index]; current != null; current = current.next) {
-            if (current.equals(key)) {
+            if (current.key.equals(key)) {
                 return current.value;
             }
         }
@@ -85,7 +85,7 @@ public class SimpleHashMap {
         }
 
         //-- search for the node before the ione we waana remove
-        for (Node current = buckets[index]; current != null; current = current.next) {
+        for (Node current = head; current.next != null; current = current.next) {
             if (current.next.key.equals(key)) {
                 int removedValue = current.next.value;
                 current.next = current.next.next; //-- we point our next pointer to the node after the deleted node
